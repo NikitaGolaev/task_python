@@ -5,16 +5,26 @@ data = open('Annaeva.txt','r')
 for line in data:                           
     n_str =line
 data.close()
-n_str=n_str.replace("=","").replace("0","")
+
+first_coef=int(n_str[0]+n_str[1])
+second_coef = int(n_str[10]+n_str[11])
+three_coef = int(n_str[19]+n_str[20])
 
 data = open('Annaeva2.txt','r')
 for line in data:
     n_str2 =line
 data.close()
-n_str2=n_str2.replace("=","").replace("0","")
 
-result = n_str + '+' + n_str2 + '= ' + '0'
+first_coef2=int(n_str2[0]+n_str2[1])
+second_coef2 = int(n_str2[10]+n_str2[11])
+three_coef2 = int(n_str2[19]+n_str2[20])
 
+
+first_coef = str(first_coef + first_coef2)
+second_coef =str(second_coef + second_coef2)
+three_coef =str(three_coef + three_coef2)
+
+result = first_coef + '*x^2 ' + ' + ' + second_coef + '*x ' + ' + ' + three_coef + ' = 0'
 with open('Annaeva3.txt', 'w') as data:
    data.write(result)
 print(result)
